@@ -21,7 +21,7 @@ router.get(
 );
 
 //redirect route after google sign in
-router.get("/google/redirect", (req, res) => {
+router.get("/google/redirect", passport.authenticate("google"), (req, res) => {
   res.send("redirecting url after google sign in");
 });
 
